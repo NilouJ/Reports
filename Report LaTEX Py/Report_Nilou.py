@@ -1,6 +1,4 @@
 import os
-from ctypes.wintypes import RGB
-
 import numpy as np
 from pylatex import Document, Section, Subsection, Command, Figure, Tabular, MultiRow, MultiColumn
 import pdflatex
@@ -13,7 +11,7 @@ from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape
 import matplotlib.pyplot as plt
 
-num = 4
+num = 5
 
 
 def fill_document(doc):
@@ -33,10 +31,9 @@ def fill_document(doc):
                 table.add_row((bold('Task:'), bold('Goal/Desired outcome:'),
                                bold('Progress:'), bold('GitHub:')))
                 table.add_hline()
-                table.add_row('Task1', '', '', MultiRow(3, data='Quant-Studio 5: Completed',
-                                                        color='green'))
+                table.add_row('Task1', '', '', MultiRow(3, data='Multicolumn not on left'))
                 table.add_hline(start=3)
-                table.add_row('', '', '', 'Quant-Studio 7: Completed', color='green')
+                table.add_empty_row()
                 table.add_hline(start=3)
                 table.add_empty_row()
                 table.add_hline()
@@ -89,3 +86,4 @@ if __name__ == '__main__':
     fill_document(doc)
     doc.generate_pdf('Report_Nilou', clean_tex=False, compiler='pdflatex')
     tex = doc.dumps()  # The document as string in LaTeX syntax
+
