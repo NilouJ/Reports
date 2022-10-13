@@ -11,7 +11,7 @@ from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape
 import matplotlib.pyplot as plt
 
-num = 5
+num = 6
 
 
 def fill_document(doc):
